@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benzer Precon | Takeoffs, bid leveling and jobsite video for contractors</title>
+<meta name="description" content="Fixed-price quantity takeoffs, bid leveling, jobsite video and bid paperwork for contractors. 48–72 hour turnaround. First takeoff half price.">
+<meta name="theme-color" content="#0F2A20">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2A20'/%3E%3Cpath d='M13 10v20h10l4-4v-4l-3-2 3-2v-4l-4-4zM13 20h11' fill='none' stroke='%23C9F24A' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F6F2;
+  --sheet:#FCFDFB;
+  --ink:#0F2A20;
+  --ink-soft:#4B5F56;
+  --green:#1E7A4E;
+  --green-deep:#145C39;
+  --mint:#DCEFE2;
+  --vest:#C9F24A;
+  --line:#A9BBB1;
+  --hair:#D6E0DA;
+  --max:1140px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--green)}
+a:hover{color:var(--green-deep)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+h1,h2,h3{font-family:"Barlow Condensed","Barlow",sans-serif;line-height:1.02;margin:0;font-weight:800;letter-spacing:-.005em}
+h2{font-size:clamp(2.2rem,4.6vw,3.3rem)}
+h3{font-size:1.55rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.lede{font-size:1.15rem;color:var(--ink-soft);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 1.05rem/1 "Barlow",sans-serif;text-decoration:none;padding:17px 24px;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;border-radius:4px;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);color:var(--ink);box-shadow:0 8px 20px -10px rgba(15,42,32,.45)}
+.btn-primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
+.btn-light{border-color:#fff;color:#fff}
+.btn-light:hover{background:#fff;color:var(--ink)}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.08s}
+.reveal[data-delay="2"]{transition-delay:.16s}
+.reveal[data-delay="3"]{transition-delay:.24s}
+
+/* Header */
+.top{position:sticky;top:0;z-index:20;background:rgba(243,246,242,.88);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.top.scrolled{border-color:var(--hair);box-shadow:0 6px 24px -18px rgba(15,42,32,.5)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo svg{width:42px;height:42px;flex:none}
+.logo .lb{fill:var(--ink)}
+.logo .lt{fill:none;stroke:var(--vest);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:80;stroke-dashoffset:80;animation:draw 1.2s .2s var(--ease) forwards}
+.logo .lg{stroke:rgba(201,242,74,.28);stroke-width:.6}
+.logo .ld{fill:var(--vest);animation:pulse 2.6s 1.4s ease-in-out infinite}
+.logo-text{line-height:1}
+.logo-text b{display:block;font-family:"Barlow Condensed";font-weight:800;font-size:1.5rem;letter-spacing:.01em}
+.logo-text span{display:block;font-family:"Barlow Condensed";font-weight:600;font-size:.82rem;letter-spacing:.32em;color:var(--green);margin-top:3px}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.tabs-nav{position:relative;display:flex;gap:4px}
+.tabs-nav a{position:relative;padding:10px 14px;text-decoration:none;font-weight:600;color:var(--ink-soft);border-radius:4px;transition:color .25s}
+.tabs-nav a:hover{color:var(--ink)}
+.tabs-nav a.active{color:var(--ink)}
+.nav-ink{position:absolute;bottom:2px;height:3px;background:var(--green);border-radius:2px;transition:left .45s var(--ease),width .45s var(--ease),opacity .3s;opacity:0}
+.top .btn{padding:12px 18px;font-size:.98rem}
+.menu-btn{display:none;background:none;border:2px solid var(--ink);border-radius:4px;padding:8px 12px;font:600 .95rem "Barlow";color:var(--ink);cursor:pointer}
+@media (max-width:900px){
+  .tabs-nav{display:none}
+  .menu-btn{display:block}
+  .top .btn{display:none}
+  .tabs-nav.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--sheet);border-bottom:1px solid var(--hair);padding:12px 24px 20px;gap:2px;box-shadow:0 18px 30px -20px rgba(15,42,32,.5);animation:drop .3s var(--ease)}
+  .tabs-nav.open .nav-ink{display:none}
+}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* Hero */
+.hero{position:relative;padding:56px 0 88px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:48px 48px;opacity:.55;mask-image:radial-gradient(ellipse 80% 70% at 70% 30%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 70% 30%,#000 30%,transparent 75%);animation:grid 40s linear infinite}
+@keyframes grid{to{background-position:48px 48px,48px 48px}}
+.sheet{position:relative;background:var(--sheet);border:2px solid var(--ink);border-radius:6px;padding:60px 60px 0;box-shadow:0 30px 60px -40px rgba(15,42,32,.5)}
+.sheet::before{content:"";position:absolute;inset:9px;border:1px solid var(--line);border-radius:3px;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start;position:relative;z-index:1}
+.hero h1{font-size:clamp(3rem,7vw,5.6rem);font-weight:800}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:block;transform:translateY(105%);animation:rise .9s var(--ease) forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.12s;color:var(--green)}
+@keyframes rise{to{transform:none}}
+.dim{position:relative;height:28px;margin:22px 0 6px;max-width:440px}
+.dim .bar{position:absolute;left:0;top:13px;height:2px;width:0;background:var(--ink);animation:grow 1.1s .7s var(--ease) forwards}
+.dim .t1,.dim .t2{position:absolute;top:4px;width:2px;height:20px;background:var(--ink)}
+.dim .t1{left:0}
+.dim .t2{left:0;opacity:0;animation:tick 1.1s .7s var(--ease) forwards}
+.dim .lbl{position:absolute;left:50%;top:-6px;transform:translateX(-50%);background:var(--sheet);padding:0 10px;font:700 .95rem "Barlow Condensed";opacity:0;animation:fade .4s 1.6s forwards;white-space:nowrap}
+@keyframes grow{to{width:100%}}
+@keyframes tick{to{left:calc(100% - 2px);opacity:1}}
+@keyframes fade{to{opacity:1}}
+.hero .lede{margin-top:18px;font-size:1.2rem}
+.promises{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.promises li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;padding:16px 18px;background:var(--paper);border:1px solid var(--hair);border-left:4px solid var(--green);border-radius:4px;opacity:0;transform:translateX(16px);animation:slidein .6s var(--ease) forwards}
+.promises li:nth-child(1){animation-delay:.9s}
+.promises li:nth-child(2){animation-delay:1.02s}
+.promises li:nth-child(3){animation-delay:1.14s}
+.promises li:nth-child(4){animation-delay:1.26s}
+@keyframes slidein{to{opacity:1;transform:none}}
+.promises svg{width:34px;height:34px}
+.promises b{display:block;font-family:"Barlow Condensed";font-size:1.3rem;font-weight:700;line-height:1.15}
+.promises span{font-size:.95rem;color:var(--ink-soft)}
+.offer{display:inline-flex;align-items:center;gap:12px;margin:26px 0 0;padding:10px 16px 10px 10px;background:var(--ink);color:#fff;border-radius:999px;font-weight:600}
+.offer em{font-style:normal;background:var(--vest);color:var(--ink);font-weight:800;padding:4px 10px;border-radius:999px;font-family:"Barlow Condensed";font-size:1.05rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 52px}
+.titleblock{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;border-top:2px solid var(--ink);margin:0 -60px;position:relative;z-index:1}
+.titleblock div{padding:14px 18px;border-right:1px solid var(--ink)}
+.titleblock div:last-child{border-right:0}
+.titleblock small{display:block;font-size:.74rem;color:var(--ink-soft)}
+.titleblock b{font-family:"Barlow Condensed";font-weight:700;font-size:1.2rem}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:28px}}
+@media (max-width:760px){
+  .sheet{padding:36px 22px 0}
+  .titleblock{grid-template-columns:1fr 1fr;margin:0 -22px}
+  .titleblock div:nth-child(2){border-right:0}
+  .titleblock div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+}
+
+/* Why */
+.why-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--ink)}
+.why > div{padding:26px 24px 8px 0;border-right:1px solid var(--hair);margin-right:24px}
+.why > div:last-child{border-right:0;margin-right:0}
+.why b{display:block;font-family:"Barlow Condensed";font-size:1.75rem;font-weight:800;line-height:1.05;margin-bottom:10px}
+.why p{color:var(--ink-soft);font-size:.98rem}
+@media (max-width:900px){.why-head{grid-template-columns:1fr;gap:12px}.why{grid-template-columns:1fr 1fr}.why > div:nth-child(2){border-right:0;margin-right:0}}
+@media (max-width:540px){.why{grid-template-columns:1fr}.why > div{border-right:0;margin-right:0;border-bottom:1px solid var(--hair)}}
+
+/* Services tabs */
+.services{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.services::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:1px solid rgba(201,242,74,.18);border-radius:50%;box-shadow:0 0 0 60px rgba(201,242,74,.04),0 0 0 140px rgba(201,242,74,.03);pointer-events:none}
+.services .lede{color:#B9CBC1}
+.svc-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0;position:relative}
+.svc-tabs button{font:700 1.02rem "Barlow",sans-serif;color:#CFDDD5;background:transparent;border:1px solid #3E5A4D;border-radius:999px;padding:12px 20px;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .25s var(--ease)}
+.svc-tabs button:hover{border-color:var(--vest);color:#fff;transform:translateY(-1px)}
+.svc-tabs button[aria-selected="true"]{background:var(--vest);color:var(--ink);border-color:var(--vest)}
+.panels{position:relative;margin-top:28px;min-height:360px}
+.panel{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;border:1px solid #3E5A4D;border-radius:8px;padding:36px;background:rgba(255,255,255,.03)}
+.panel[hidden]{display:none}
+.panel.enter{animation:panelIn .5s var(--ease)}
+@keyframes panelIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel h3{font-size:2.2rem;font-weight:800}
+.panel p{color:#C9D8D0;margin-top:12px}
+.panel ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.panel li{display:grid;grid-template-columns:22px 1fr;gap:10px;color:#E6EFE9}
+.panel li::before{content:"";width:14px;height:8px;border-left:3px solid var(--vest);border-bottom:3px solid var(--vest);transform:rotate(-45deg) translate(2px,4px)}
+.spec{border-left:1px solid #3E5A4D;padding-left:32px;display:grid;align-content:start;gap:20px}
+.spec small{display:block;color:#9FB6AA;font-size:.85rem}
+.spec .big{font-family:"Barlow Condensed";font-weight:800;font-size:3rem;line-height:1;color:var(--vest)}
+.spec .mid{font-family:"Barlow Condensed";font-weight:700;font-size:1.6rem}
+@media (max-width:860px){.panel{grid-template-columns:1fr;padding:26px}.spec{border-left:0;border-top:1px solid #3E5A4D;padding:22px 0 0}}
+
+/* Steps */
+.steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:var(--hair)}
+.steps .progress{position:absolute;left:0;top:27px;height:2px;width:0;background:var(--green);transition:width 1.4s var(--ease)}
+.steps.in .progress{width:100%}
+.steps li{position:relative;padding-right:24px}
+.steps .n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--sheet);border:2px solid var(--green);font:800 1.5rem "Barlow Condensed";color:var(--green)}
+.steps h3{margin:18px 0 8px}
+.steps p{color:var(--ink-soft)}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;gap:28px 24px}.steps::before,.steps .progress{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* Tools */
+.tools{background:var(--mint)}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.tool{background:var(--sheet);border:1px solid var(--hair);border-top:4px solid var(--green);border-radius:6px;padding:28px;transition:transform .3s var(--ease),box-shadow .3s}
+.tool:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(15,42,32,.55)}
+.tool .hint{color:var(--ink-soft);font-size:.92rem;margin-top:6px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.fields label{font-size:.85rem;font-weight:600;color:var(--ink-soft);display:block}
+.fields input,.fields select{width:100%;margin-top:4px;padding:11px 12px;font:500 1rem "Barlow",sans-serif;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;transition:border-color .2s,box-shadow .2s}
+.fields input:focus,.fields select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(30,122,78,.2)}
+.result{border-top:1px solid var(--hair);padding-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.result small{display:block;font-size:.8rem;color:var(--ink-soft)}
+.result b{font-family:"Barlow Condensed";font-size:2rem;font-weight:800;color:var(--green-deep);display:inline-block;transition:transform .2s}
+.result b.bump{transform:scale(1.08)}
+@media (max-width:860px){.tool-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.fields{grid-template-columns:1fr}.result{grid-template-columns:1fr 1fr}}
+
+/* Bid list */
+.bidlist{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.bidcard{border:2px solid var(--ink);border-radius:6px;background:var(--sheet);padding:26px;position:relative}
+.bidcard .flag{position:absolute;top:-14px;left:22px;background:var(--green);color:#fff;font:700 .9rem "Barlow";padding:4px 12px;border-radius:999px}
+.bidcard ul{margin:6px 0 0;padding:0;list-style:none}
+.bidcard li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair);font-weight:600}
+.bidcard li:last-child{border-bottom:0}
+.bidcard li span{color:var(--ink-soft);font-weight:400}
+@media (max-width:860px){.bidlist{grid-template-columns:1fr;gap:32px}}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.creds{list-style:none;padding:0;margin:0;border-top:3px solid var(--ink)}
+.creds li{padding:16px 0;border-bottom:1px solid var(--hair)}
+.creds b{display:block;font-family:"Barlow Condensed";font-size:1.35rem;font-weight:700}
+.creds span{color:var(--ink-soft);font-size:.96rem}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:24px}}
+
+/* Contact */
+.contact{background:var(--sheet);border-top:1px solid var(--hair)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:56px;margin-top:8px}
+.direct{border:1px solid var(--hair);border-radius:6px;padding:26px;background:var(--paper);align-self:start}
+.direct a.mail{display:block;font:800 1.45rem "Barlow Condensed";color:var(--green-deep);text-decoration:none;margin:6px 0 14px;word-break:break-all}
+.direct a.mail:hover{text-decoration:underline}
+.direct p{color:var(--ink-soft);font-size:.95rem}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+form .full{grid-column:1/-1}
+form label{font-weight:600;font-size:.95rem;display:block}
+form label em{font-style:normal;color:var(--ink-soft);font-weight:400}
+form input,form select,form textarea{width:100%;margin-top:6px;padding:12px 14px;font:400 1rem "Barlow",sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:4px;transition:border-color .2s,box-shadow .2s}
+form textarea{min-height:120px;resize:vertical}
+form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(30,122,78,.2)}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+.check input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(--green)}
+.form-status{grid-column:1/-1;font-weight:600;min-height:1.6em}
+.form-status.ok{color:var(--green-deep)}
+.form-status.err{color:#B3261E}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:28px}}
+@media (max-width:640px){form{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#B9CBC1;padding:48px 0 56px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:32px}
+footer a{color:var(--vest)}
+footer b{color:#fff}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  .hero h1 .ln span,.promises li{transform:none;opacity:1}
+  .dim .bar{width:100%}.dim .t2{left:calc(100% - 2px);opacity:1}.dim .lbl{opacity:1}
+  .logo .lt{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="Benzer Precon home">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect class="lb" width="40" height="40" rx="8"/>
+        <path class="lg" d="M10 0v40M20 0v40M30 0v40M0 10h40M0 20h40M0 30h40"/>
+        <path class="lt" d="M13 10v20h10l4-4v-4l-3-2 3-2v-4l-4-4zM13 20h11"/>
+        <circle class="ld" cx="31.5" cy="31.5" r="2"/>
+      </svg>
+      <span class="logo-text"><b>Benzer</b><span>PRECON</span></span>
+    </a>
+    <nav class="tabs-nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#tools">Free tools</a>
+      <a href="#bids">Bid list</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <span class="nav-ink" aria-hidden="true"></span>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Send plans</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="sheet">
+      <div class="hero-grid">
+        <div>
+          <h1><span class="ln"><span>Accurate takeoffs.</span></span><span class="ln"><span>Bids out on time.</span></span></h1>
+          <div class="dim" aria-hidden="true"><span class="bar"></span><span class="t1"></span><span class="t2"></span><span class="lbl">Plans in → quantities back in 48–72 hrs</span></div>
+          <p class="lede">Benzer Precon handles the counting and the paperwork behind your bids, so you can spend your time pricing and winning work.</p>
+          <p class="offer"><em>50% off</em> your first takeoff</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Send plans for a quote</a>
+            <a class="btn" href="#services">See services and prices</a>
+          </div>
+        </div>
+        <ul class="promises" aria-label="What you can count on">
+          <li><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="2" y="2" width="30" height="30" rx="6" fill="#DCEFE2"/><path d="M11 17.5l4 4 8-9" fill="none" stroke="#1E7A4E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Fixed price, quoted first</b><span>You approve the price before any work starts.</span></div></li>
+          <li><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="2" y="2" width="30" height="30" rx="6" fill="#DCEFE2"/><path d="M17 10v7l5 3" fill="none" stroke="#1E7A4E" stroke-width="2.6" stroke-linecap="round"/><circle cx="17" cy="17" r="9" fill="none" stroke="#1E7A4E" stroke-width="2"/></svg><div><b>48–72 hour turnaround</b><span>Built around your bid date, not the other way around.</span></div></li>
+          <li><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="2" y="2" width="30" height="30" rx="6" fill="#DCEFE2"/><path d="M10 11h14M10 17h14M10 23h9" stroke="#1E7A4E" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Every number traceable</b><span>Each line points to the plan sheet it came from.</span></div></li>
+          <li><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="2" y="2" width="30" height="30" rx="6" fill="#DCEFE2"/><path d="M17 9l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9v-5z" fill="none" stroke="#1E7A4E" stroke-width="2.2" stroke-linejoin="round"/></svg><div><b>Errors fixed free, same day</b><span>Find a mistake in our quantities and we correct it at no charge.</span></div></li>
+        </ul>
+      </div>
+      <div class="titleblock" aria-label="Business details">
+        <div><small>Project</small><b>Your next bid</b></div>
+        <div><small>Prepared by</small><b>Pat Benzer</b></div>
+        <div><small>Takeoffs</small><b>Remote, anywhere</b></div>
+        <div><small>Jobsite video</small><b>SW Virginia</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="padding-top:24px">
+  <div class="wrap">
+    <div class="why-head reveal">
+      <h2>Where your money goes</h2>
+      <p class="lede">You're paying for quantities you can bid on with confidence. Here's what that means in practice.</p>
+    </div>
+    <div class="why">
+      <div class="reveal"><b>You see the price first</b><p>Every job gets a fixed quote within one business day. No hourly surprises, no add-ons after the fact.</p></div>
+      <div class="reveal" data-delay="1"><b>You can check every line</b><p>Quantities come with sheet references and a marked-up PDF, so your estimator can verify anything in minutes.</p></div>
+      <div class="reveal" data-delay="2"><b>Scope gaps get flagged</b><p>Conflicts between the plans and specs are listed before bid day, not discovered after you've signed.</p></div>
+      <div class="reveal" data-delay="3"><b>Your bid stays yours</b><p>We deliver quantities; you apply your own prices. Your plans and numbers are never shared with anyone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <h2 class="reveal">Services and starting prices</h2>
+    <p class="lede reveal" style="margin-top:12px">Choose a service to see what's included.</p>
+    <div class="svc-tabs" role="tablist" aria-label="Services">
+      <button role="tab" id="tab-takeoff" aria-controls="panel-takeoff" aria-selected="true">Quantity takeoffs</button>
+      <button role="tab" id="tab-level" aria-controls="panel-level" aria-selected="false" tabindex="-1">Bid leveling</button>
+      <button role="tab" id="tab-video" aria-controls="panel-video" aria-selected="false" tabindex="-1">Jobsite video</button>
+      <button role="tab" id="tab-paper" aria-controls="panel-paper" aria-selected="false" tabindex="-1">Bid and project paperwork</button>
+    </div>
+    <div class="panels">
+      <div class="panel" role="tabpanel" id="panel-takeoff" aria-labelledby="tab-takeoff">
+        <div>
+          <h3>Quantity takeoffs</h3>
+          <p>Send the plan set; get back quantities you can price immediately. Sitework, earthwork, concrete, paving and site utilities.</p>
+          <ul>
+            <li>Excel takeoff with every line tied to a plan sheet</li>
+            <li>Marked-up PDF showing exactly what was counted</li>
+            <li>Scope-gap list: conflicts between the plans, specs and addenda</li>
+            <li>Errors in delivered quantities corrected free, same day</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><small>Starting at</small><span class="big">$200</span><small>Single trade, small job. First takeoff 50% off.</small></div>
+          <div><small>Turnaround</small><span class="mid">48–72 hours</span></div>
+          <a class="btn btn-light" href="#contact" data-service="Quantity takeoff">Request a takeoff</a>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-level" aria-labelledby="tab-level" hidden>
+        <div>
+          <h3>Bid leveling</h3>
+          <p>Five quotes, five different scopes. We line them up so you compare the same work and carry the right number.</p>
+          <ul>
+            <li>Sub and supplier quotes side by side on one scope</li>
+            <li>Exclusions, missing items and alternates flagged</li>
+            <li>Adjusted totals so the low number is actually low</li>
+            <li>Ready to use on bid day</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><small>Starting at</small><span class="big">$150</span><small>Per bid package</small></div>
+          <div><small>Turnaround</small><span class="mid">24–48 hours</span></div>
+          <a class="btn btn-light" href="#contact" data-service="Bid leveling">Request bid leveling</a>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-video" aria-labelledby="tab-video" hidden>
+        <div>
+          <h3>Jobsite video</h3>
+          <p>Short videos that help you hire and win work, filmed by someone who knows how a jobsite runs and what a safe one looks like.</p>
+          <ul>
+            <li>One site visit a month, filmed in PPE under your site rules</li>
+            <li>Eight edited short videos with captions and your logo</li>
+            <li>Recruiting stories, project progress and before-and-after pieces</li>
+            <li>Ready for TikTok, Instagram, Facebook, LinkedIn and your website</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><small>Starting at</small><span class="big">$400</span><small>Per month</small></div>
+          <div><small>Service area</small><span class="mid">New River Valley and Roanoke</span></div>
+          <a class="btn btn-light" href="#contact" data-service="Jobsite video">Ask about video</a>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-paper" aria-labelledby="tab-paper" hidden>
+        <div>
+          <h3>Bid and project paperwork</h3>
+          <p>The office work that piles up after hours. Hand it off and get your evenings back.</p>
+          <ul>
+            <li>Open bid searches for your trade and region</li>
+            <li>Bid forms, addenda checklists and spec reviews for your scope</li>
+            <li>Schedules of values and monthly pay applications</li>
+            <li>Submittal packages, RFI logs and closeout binders</li>
+            <li>Permit application prep and site-specific safety plans</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><small>Pricing</small><span class="mid">Quoted per job</span></div>
+          <div><small>Turnaround</small><span class="mid">Agreed up front</span></div>
+          <a class="btn btn-light" href="#contact" data-service="Bid or project paperwork">Describe the job</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2 class="reveal">How a takeoff works</h2>
+    <ol class="steps reveal" id="steps">
+      <li class="progress" aria-hidden="true"></li>
+      <li><div class="n">1</div><h3>Send the plans</h3><p>Share a link to the plan set, specs and addenda, plus your bid date.</p></li>
+      <li><div class="n">2</div><h3>Approve a fixed quote</h3><p>You get a price and delivery time within one business day.</p></li>
+      <li><div class="n">3</div><h3>Get your quantities</h3><p>Excel takeoff, marked-up PDF and scope-gap list, on schedule.</p></li>
+      <li><div class="n">4</div><h3>Price and win</h3><p>Apply your own unit costs. Your pricing and your bid stay yours.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="tools" class="tools">
+  <div class="wrap">
+    <h2 class="reveal">Free field calculators</h2>
+    <p class="lede reveal" style="margin-top:12px">Quick checks for the truck count and the rebar order. Bookmark this page.</p>
+    <div class="tool-grid">
+      <div class="tool reveal" id="earthwork">
+        <h3>Excavation and truck loads</h3>
+        <p class="hint">Rectangular cut. Swell converts bank yards to loose yards in the truck.</p>
+        <div class="fields">
+          <label>Length (ft)<input type="number" inputmode="decimal" min="0" step="any" id="ew-l" value="100"></label>
+          <label>Width (ft)<input type="number" inputmode="decimal" min="0" step="any" id="ew-w" value="40"></label>
+          <label>Depth (ft)<input type="number" inputmode="decimal" min="0" step="any" id="ew-d" value="3"></label>
+          <label>Swell (%)<input type="number" inputmode="decimal" min="0" step="any" id="ew-s" value="25"></label>
+          <label>Truck capacity (loose CY)<input type="number" inputmode="decimal" min="0" step="any" id="ew-t" value="12"></label>
+        </div>
+        <div class="result" aria-live="polite">
+          <div><small>Bank CY</small><b id="ew-bank">0</b></div>
+          <div><small>Loose CY</small><b id="ew-loose">0</b></div>
+          <div><small>Truck loads</small><b id="ew-loads">0</b></div>
+        </div>
+      </div>
+      <div class="tool reveal" data-delay="1" id="rebar">
+        <h3>Rebar weight</h3>
+        <p class="hint">Standard US bar weights per ASTM A615. Include laps in the bar length.</p>
+        <div class="fields">
+          <label>Bar size
+            <select id="rb-size">
+              <option value="0.376">#3</option>
+              <option value="0.668" selected>#4</option>
+              <option value="1.043">#5</option>
+              <option value="1.502">#6</option>
+              <option value="2.044">#7</option>
+              <option value="2.670">#8</option>
+              <option value="3.400">#9</option>
+              <option value="4.303">#10</option>
+              <option value="5.313">#11</option>
+              <option value="7.650">#14</option>
+              <option value="13.600">#18</option>
+            </select>
+          </label>
+          <label>Number of bars<input type="number" inputmode="numeric" min="0" step="1" id="rb-n" value="120"></label>
+          <label>Length per bar (ft)<input type="number" inputmode="decimal" min="0" step="any" id="rb-len" value="20"></label>
+        </div>
+        <div class="result" aria-live="polite">
+          <div><small>Total length (LF)</small><b id="rb-lf">0</b></div>
+          <div><small>Weight (lb)</small><b id="rb-lb">0</b></div>
+          <div><small>Weight (tons)</small><b id="rb-t">0</b></div>
+        </div>
+      </div>
+    </div>
+    <p class="hint reveal" style="margin-top:22px;color:var(--ink-soft);font-size:.92rem">For quick checks only. Need the whole job counted? <a href="#contact">Send the plans.</a></p>
+  </div>
+</section>
+
+<section id="bids">
+  <div class="wrap bidlist">
+    <div class="reveal">
+      <h2>Free: open bids every Monday</h2>
+      <p class="lede" style="margin-top:12px">A weekly list of open public bids for sitework, concrete, paving and utilities in Southwest Virginia, pulled from eVA, VDOT and local bid boards. Free, no strings.</p>
+      <a class="btn btn-primary" href="#contact" data-bidlist>Get the Monday bid list</a>
+    </div>
+    <div class="bidcard reveal" data-delay="1" aria-label="What each entry includes">
+      <span class="flag">Every entry includes</span>
+      <ul>
+        <li>Project<span>Name and location</span></li>
+        <li>Owner<span>Town, county or VDOT</span></li>
+        <li>Bid date<span>Date and time</span></li>
+        <li>Scope<span>One line, your trade</span></li>
+        <li>Plans<span>Where to get them</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:24px">
+  <div class="wrap about">
+    <div class="reveal"><h2>Who does the work</h2></div>
+    <div class="reveal" data-delay="1">
+      <p class="lede" style="margin-bottom:24px">I'm Pat Benzer, a Construction Engineering and Management student at Virginia Tech. I've built sitework bids on the estimating side and verified installed quantities on the owner's side. Benzer Precon is me, so the person counting your job is the person you talk to.</p>
+      <ul class="creds">
+        <li><b>Sitework estimating</b><span>Earthwork takeoffs, cut and fill balance and haul costs for a Western New York civil contractor</span></li>
+        <li><b>Field inspection</b><span>Owner's-side inspector on NYSDOT bridge replacements: pay quantities, rebar weights, QA/QC testing and daily reports</span></li>
+        <li><b>Virginia Tech CEM</b><span>B.S. Construction Engineering and Management, minor in AI, expected 2028</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="reveal">Send plans for a quote</h2>
+    <p class="lede reveal" style="margin-top:12px">Fixed price within one business day. Your first takeoff is 50% off.</p>
+    <div class="contact-grid">
+      <div class="direct reveal">
+        <small style="color:var(--ink-soft)">Email directly</small>
+        <a class="mail" href="mailto:benzerprecon@gmail.com">benzerprecon@gmail.com</a>
+        <p>Attach the plans or a link. Replies within one business day.</p>
+        <p style="margin:0">Blacksburg, Virginia</p>
+      </div>
+      <form id="request-form" class="reveal" data-delay="1" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Company<input name="company" autocomplete="organization" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Phone <em>(optional)</em><input type="tel" name="phone" autocomplete="tel"></label>
+        <label>What do you need?
+          <select name="service" id="service" required>
+            <option value="">Choose one</option>
+            <option>Quantity takeoff</option>
+            <option>Bid leveling</option>
+            <option>Jobsite video</option>
+            <option>Bid or project paperwork</option>
+            <option>Just the weekly bid list</option>
+          </select>
+        </label>
+        <label>Bid date <em>(if any)</em><input type="date" name="bid_date"></label>
+        <label class="full">Link to plans and specs <em>(Dropbox, Google Drive or bid portal)</em><input type="url" name="plans_link" placeholder="https://"></label>
+        <label class="full">Scope and notes<textarea name="notes" placeholder="Trade, sheets to cover, anything I should know"></textarea></label>
+        <label class="full check"><input type="checkbox" name="weekly_bid_list" value="yes" id="bidlist-box"> Send me the free Monday bid list</label>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="btn btn-primary" type="submit">Send request</button></div>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Benzer Precon</b><br>Blacksburg, Virginia<br><a href="mailto:benzerprecon@gmail.com">benzerprecon@gmail.com</a></div>
+    <div>Quantities are prepared for the client's estimator to review and price. Benzer Precon does not provide engineering design, surveying or legal services. Client plans and numbers are kept confidential and never shared with other clients.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Header shadow
+  const top=document.getElementById("top");
+  const onScroll=()=>top.classList.toggle("scrolled",window.scrollY>8);
+  addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+  // Mobile menu
+  const nav=document.getElementById("nav"),menu=document.getElementById("menu-btn");
+  menu.addEventListener("click",()=>{const o=nav.classList.toggle("open");menu.setAttribute("aria-expanded",o);menu.textContent=o?"Close":"Menu";});
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="Menu";}));
+
+  // Active nav tab with sliding underline
+  const links=[...nav.querySelectorAll("a")],ink=nav.querySelector(".nav-ink");
+  function moveInk(a){
+    if(!a){ink.style.opacity=0;links.forEach(l=>l.classList.remove("active"));return;}
+    links.forEach(l=>l.classList.toggle("active",l===a));
+    ink.style.left=a.offsetLeft+10+"px";ink.style.width=a.offsetWidth-20+"px";ink.style.opacity=1;
+  }
+  const sections=links.map(a=>document.querySelector(a.getAttribute("href")));
+  function spy(){
+    const y=window.scrollY+120;let cur=null;
+    sections.forEach((s,i)=>{if(s&&s.offsetTop<=y)cur=links[i];});
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)cur=links[links.length-1];
+    moveInk(cur);
+  }
+  addEventListener("scroll",spy,{passive:true});addEventListener("resize",spy);spy();
+
+  // Reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.15,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(el=>reduce?el.classList.add("in"):io.observe(el));
+
+  // Service tabs
+  const tabs=[...document.querySelectorAll('[role="tab"]')];
+  function select(t,focus){
+    tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;
+      const p=document.getElementById(x.getAttribute("aria-controls"));
+      if(on){p.hidden=false;p.classList.remove("enter");void p.offsetWidth;p.classList.add("enter");}else p.hidden=true;});
+    if(focus)t.focus();
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener("click",()=>select(t));
+    t.addEventListener("keydown",e=>{
+      if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();const n=tabs[(i+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length];select(n,true);}
+    });
+  });
+
+  // Prefill service from buttons
+  const svcSel=document.getElementById("service");
+  document.querySelectorAll("[data-service]").forEach(b=>b.addEventListener("click",()=>{svcSel.value=b.dataset.service;}));
+  document.querySelectorAll("[data-bidlist]").forEach(b=>b.addEventListener("click",()=>{document.getElementById("bidlist-box").checked=true;if(!svcSel.value)svcSel.value="Just the weekly bid list";}));
+
+  // Calculators
+  const fmt=(n,d=0)=>isFinite(n)?n.toLocaleString("en-US",{maximumFractionDigits:d,minimumFractionDigits:d}):"0";
+  const v=id=>parseFloat(document.getElementById(id).value)||0;
+  function set(id,val){const el=document.getElementById(id);if(el.textContent!==val){el.textContent=val;if(!reduce){el.classList.add("bump");setTimeout(()=>el.classList.remove("bump"),180);}}}
+  function earthwork(){
+    const bank=v("ew-l")*v("ew-w")*v("ew-d")/27,loose=bank*(1+v("ew-s")/100),cap=v("ew-t");
+    set("ew-bank",fmt(bank,1));set("ew-loose",fmt(loose,1));set("ew-loads",cap>0?fmt(Math.ceil(loose/cap)):"0");
+  }
+  function rebar(){
+    const lf=v("rb-n")*v("rb-len"),lb=lf*parseFloat(document.getElementById("rb-size").value);
+    set("rb-lf",fmt(lf));set("rb-lb",fmt(lb));set("rb-t",fmt(lb/2000,2));
+  }
+  document.querySelectorAll("#earthwork input").forEach(el=>el.addEventListener("input",earthwork));
+  document.querySelectorAll("#rebar input,#rebar select").forEach(el=>el.addEventListener("input",rebar));
+  earthwork();rebar();
+
+  // Steps progress line
+  const steps=document.getElementById("steps");
+  new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){steps.classList.add("in");o.disconnect();}}),{threshold:.4}).observe(steps);
+
+  // Form
+  const form=document.getElementById("request-form"),status=document.getElementById("form-status");
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    if(form.action.includes("REPLACE_WITH_FORM_ID")){
+      status.className="form-status err";
+      status.innerHTML='The form isn\'t connected yet. Email <a href="mailto:benzerprecon@gmail.com">benzerprecon@gmail.com</a> instead.';
+      return;
+    }
+    status.className="form-status";status.textContent="Sending…";
+    try{
+      const r=await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});
+      if(!r.ok)throw new Error();
+      form.reset();status.className="form-status ok";status.textContent="Request sent. You'll get a quote within one business day.";
+    }catch{
+      status.className="form-status err";
+      status.innerHTML='The request didn\'t send. Try again, or email <a href="mailto:benzerprecon@gmail.com">benzerprecon@gmail.com</a>.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
